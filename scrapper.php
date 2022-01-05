@@ -6,9 +6,6 @@ function curl($url) : array
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);// If Location: headers are sent by the server, follow the location.
     curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        ''=>''
-    ]);
     curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.2 Safari/605.1.15");
     $r["http_response"] = curl_exec($ch);
     $r["http_response_code"] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
